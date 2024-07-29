@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Remover Produto</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}">
+</head>
+<body>
+	<div th:if="${sucesso}" class="success-message">
+		<p th:text="${sucesso}"></p>
+	</div>
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Nome</th>
+				<th>Preço</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="produto : ${produtos}">
+				<td th:text="${produto.id}" />
+				<td th:text="${produto.nome}" />
+				<td th:text="${produto.preco}" />
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
